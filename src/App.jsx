@@ -1,15 +1,17 @@
 import "./App.css";
-import Header from "./components/Header/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 
 import React from "react";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-const Header = React.lazy(() => import("./components/Header/Header"));
-const Shop = React.lazy(() => import("./Pages/Shop/Shop"));
-const AllProducs = React.lazy(() => import("./Pages/AllProducs/AllProducs"));
+// const Header = React.lazy(() => import("./components/Header/Header"));
+// const Shop = React.lazy(() => import());
+import Shop from "./Pages/Shop/Shop";
+import AllProducs from "./Pages/AllProducs/AllProducs";
+// const AllProducs = React.lazy(() => import());
 
 function App() {
   return (
