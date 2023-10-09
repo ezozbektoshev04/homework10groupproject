@@ -1,6 +1,16 @@
 import "./App.css";
-// import MyCarousel from "./components/Home/Corusel/Corusel";
+import MyCarousel from "./components/Home/Corusel/Corusel";
+
+function App() {
+  return (
+    <>
+      <MyCarousel />
+    </>
+  );
+}
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
 import Header from "./components/Header/Header";
 import Shop from "./Pages/Shop/Shop";
 import Details from "./Pages/SingleProduct/Details";
@@ -8,7 +18,6 @@ import Details from "./Pages/SingleProduct/Details";
 function App() {
   return (
     <div>
-      {/* <MyCarousel /> */}
       <Router>
         <Header />
         {/* <Randge /> */}
