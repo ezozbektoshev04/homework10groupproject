@@ -1,0 +1,27 @@
+// .bc {
+//   background-image: "../../../public/";
+// }
+.bc {
+  width: 100%;
+}
+.bcc {
+  height: 900px;
+}
+.f-p1 {
+  color: var(--color-gray-2, #616161);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 30px */
+}
+.f-p2 {
+  color: var(--color-gray-1, #3a3a3a);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 48px */
+}
