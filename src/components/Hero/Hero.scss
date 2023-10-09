@@ -56,7 +56,11 @@
       align-items: flex-start;
       gap: 10px;
       border: none;
+      &:hover {
+        background-color: #e2a413;
+        cursor: pointer;
+        transition: 0.3s;
+      }
     }
-
   }
 }

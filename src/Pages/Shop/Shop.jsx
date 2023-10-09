@@ -104,7 +104,7 @@ const Shop = () => {
       </section>
       {/* /////////////////////////////// */}
       <div className="container">
-        <ul className="cards-content">
+        <div className="cards-content">
           <div className=" cards">
             {posts.map((news, index) => (
               <div key={index} className="cards-item">
@@ -119,7 +119,7 @@ const Shop = () => {
                 </div>
                 <div className="hovered">
                   <button className="hj">Add To Cart</button>
-                  <Link to={`/products/${news.id}`}>rrfrfrfrf</Link>
+                  <Link to={`/Details/${news.id}`}>rrfrfrfrf</Link>
                   <div className="items">
                     <svg
                       className="rf"
@@ -180,7 +180,7 @@ const Shop = () => {
               </button>
             ))}
           </div>
-        </ul>
+        </div>
       </div>
       {/* /////////////////////////////// */}
       <section className="buttom">

@@ -1,6 +1,8 @@
 import React from "react";
 import "./Hero.scss";
-
+import Randge from "../Randge.jsx/Randge";
+import Furniro from "../Furniro/Furniro";
+import OurProducts from "../ourProducts/OurProducts";
 const Hero = () => {
   return (
     <>
@@ -17,6 +19,9 @@ const Hero = () => {
           </div>
         </div>
       </section>
+      <Randge />
+      <OurProducts/>
+      <Furniro />
     </>
   );
 };
