@@ -3,17 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Shop from "./Pages/Shop/Shop";
+
 import Details from "./Pages/SingleProduct/Details";
 
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Footer from "./components/Footer/Footer";
-
-// import React from "react";
-// import "./App.css";
-
-// import Shop from "./Pages/Shop/Shop";
 // import AllProducs from "./Pages/AllProducs/AllProducs";
 
 function App() {
@@ -21,8 +15,6 @@ function App() {
     <div>
       <Router>
         <Header />
-        {/* <Randge /> */}
-        {/* <Furniro /> */}
         <Routes>
           {/* //birinchi project ↓ */}
           {/* <Route path="/" element={<AllProducs />}></Route> */}
