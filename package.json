@@ -18,7 +18,8 @@
     "react-bootstrap": "^2.9.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
-    "sass": "^1.69.0"
+    "sass": "^1.69.0",
+    "server": "^1.0.38"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

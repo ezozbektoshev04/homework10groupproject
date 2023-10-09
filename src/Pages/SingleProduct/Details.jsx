@@ -33,7 +33,7 @@ const Details = () => {
       {product.map((el) => {
         return (
           <div key={el.id}>
-            <h1 style={{ marginTop: "200px" }}>{el.title}</h1>
+            <h1>{el.title}</h1>
           </div>
         );
       })}
