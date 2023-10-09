@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.scss";
+import Search from "../Search/Search";
 
 const Header = () => {
+  const [show, setShow] = useState(false);
+  const showSearchBar = () => {
+    setShow(!show);
+  };
   return (
     <header>
       <div className="container">
@@ -24,7 +29,7 @@ const Header = () => {
             <div className="nav-icon">
               <img src="/image11.svg" alt="" />
             </div>
-            <div className="nav-icon">
+            <div className="nav-icon" onClick={showSearchBar}>
               <img src="/image12.svg" alt="" />
             </div>
             <div className="nav-icon">
@@ -36,6 +41,7 @@ const Header = () => {
           </div>
         </nav>
       </div>
+      <Search show={show} />
     </header>
   );
 };
