@@ -30,6 +30,12 @@ const Details = () => {
 
   return (
     <div>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum dolorum
+        dolores ad quam natus quia deserunt, voluptate vel quis maxime fugiat
+        repellendus quos, nobis mollitia cumque consequuntur modi cupiditate.
+        Deserunt?
+      </h1>
       {product.map((el) => {
         <div key={el.id}>
           <h1>{el.category}</h1>
