@@ -22,9 +22,6 @@ const Shop = () => {
   const fetchPosts = async (page) => {
     try {
       let url = `http://localhost:3000/products?_page=${page}&_limit=${limit}`;
-      //   if (selectedCategory) {
-      //     url += `&category=${selectedCategory}`;
-      //   }
       const res = await axios.get(url);
       setPosts(res.data);
     } catch (err) {
