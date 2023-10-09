@@ -119,7 +119,7 @@ const Shop = () => {
                 </div>
                 <div className="hovered">
                   <button className="hj">Add To Cart</button>
-                  <Link to={`/products/${news.id}`}>rrfrfrfrf</Link>
+                  <Link to={`/Details/${news.id}`}>rrfrfrfrf</Link>
                   <div className="items">
                     <svg
                       className="rf"
