@@ -57,16 +57,18 @@ const Details = () => {
     fetchData();
   }, [paramId]);
 
-  if (!product) {
-    return <div>Loading...</div>;
-  }
+  // if (!product) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <div>
       {product.map((el) => {
-        <div key={el.id}>
-          <h1>{el.category}</h1>
-        </div>;
+        return (
+          <div key={el.id}>
+            <h1 style={{ marginTop: "200px" }}>{el.title}</h1>
+          </div>
+        );
       })}
       {/* Отобразите остальные свойства продукта */}
     </div>
