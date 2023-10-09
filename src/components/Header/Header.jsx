@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./Header.scss";
 import Search from "../Search/Search";
 
-const Header = () => {
+const Header = ({ searchText }) => {
   const [show, setShow] = useState(false);
   const showSearchBar = () => {
     setShow(!show);
@@ -41,7 +41,7 @@ const Header = () => {
           </div>
         </nav>
       </div>
-      <Search show={show} />
+      <Search show={show} searchText={searchText} />
     </header>
   );
 };

@@ -38,8 +38,9 @@ const OurProducts = () => {
                 <p className="notPrice">Rp {news.price + 1000000}</p>
               </div>
               <div className="hovered">
-                <button className="hj">Add To Cart</button>
-                <Link to={`/Details/${news.id}`}>rrfrfrfrf</Link>
+                <Link to={`/Details/${news.id}`}>
+                  <button className="hj">Add To Cart</button>
+                </Link>
                 <div className="items">
                   <svg
                     className="rf"

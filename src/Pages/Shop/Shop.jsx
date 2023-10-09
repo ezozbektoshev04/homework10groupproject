@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Shop.scss";
 import axios from "axios";
-import Search from "../../components/Search/Search";
+import Header from "../../components/Header/Header";
+// import { log } from "console";
+// import Search, { input } from "../../components/Search/Search";
+// import { input } from "../../components/Search/Search";
+
 // import { Button } from "bootstrap";
 // import { Form } from "react-router-dom";
 
@@ -11,7 +15,9 @@ const Shop = () => {
   const [posts, setPosts] = useState([]);
   const [page, setPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedPost, setSelectedPost] = useState("");
 
+  // console.log(input);
   // PAGINATION
   let limit = 6;
   let numOfpages = Math.ceil(allPosts.length / limit);
@@ -29,6 +35,23 @@ const Shop = () => {
       console.log(err);
     }
   };
+  const [input, setInput] = useState("");
+  const searchText = (e) => {
+    const inputText = e.target.value.toLowerCase();
+    setInput(inputText);
+    console.log(input);
+  };
+
+  const filtered = posts.filter((el) => {
+    if (input === "") {
+      return el;
+    } else {
+      return (
+        el.name.toLowerCase().includes(input) ||
+        el.title.toLowerCase().includes(input)
+      );
+    }
+  });
 
   const fetchAllPosts = async () => {
     try {
@@ -51,8 +74,15 @@ const Shop = () => {
     setSelectedCategory(category);
     setPage(2);
   };
+  // const filterData = (e) => {
+  //   const aa = e.target.value;
+  //   setSelectedPost(aa);
+  //   console.log(selectedPost);
+  // };
+
   return (
     <div>
+      <Header searchText={searchText} />
       <section className="home-section">
         <img className="shop-img" src="/Shop.img.png" alt="Shop" />
         <div className="container">
@@ -75,20 +105,29 @@ const Shop = () => {
         <div className="container">
           <div className="content">
             <div className="first">
-              <select className="filter" name="filter" id="">
-                <option className="opn" value="">
+              <select
+                className="filter"
+                name="filter"
+                id="All"
+                onChange={(e) => {
+                  const aa = e.target.value;
+                  setSelectedPost(aa);
+                  console.log(selectedPost);
+                }}
+              >
+                <option className="opn" value="All">
                   All
                 </option>
-                <option className="opn" value="">
+                <option className="opn" value="Syltherine">
                   Syltherine
                 </option>
-                <option className="opn" value="">
+                <option className="opn" value="Leviosa">
                   Leviosa
                 </option>
-                <option className="opn" value="">
+                <option className="opn" value="Lolito">
                   Lolito
                 </option>
-                <option className="opn" value="">
+                <option className="opn" value="Respira">
                   Respira
                 </option>
               </select>
@@ -107,7 +146,7 @@ const Shop = () => {
       <div className="container">
         <div className="cards-content">
           <div className=" cards">
-            {posts.map((shop, index) => (
+            {filtered.map((shop, index) => (
               <div key={index} className="cards-item">
                 <div className="bg-img">
                   <img className="boxs" src={shop.img} alt="" />

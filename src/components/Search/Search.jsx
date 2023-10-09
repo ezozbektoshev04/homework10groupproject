@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import "./Search.scss";
+// import { log } from "console";
+// import Shop from "../../Pages/Shop/Shop";
 
-const Search = ({ show }) => {
-  const [input, setInput] = useState("");
-  const searchText = (e) => {
-    const inputText = e.target.value.toLowerCase();
-    setInput(inputText);
-  };
-
+const Search = ({ show, searchText }) => {
   return (
     <div className="container search">
       <form onSubmit={(e) => e.preventDefault()}>
@@ -20,8 +16,10 @@ const Search = ({ show }) => {
           onChange={searchText}
         />
       </form>
+      {/* <Shop /> */}
     </div>
   );
 };
+// console.log(inputValue);
 
 export default Search;
