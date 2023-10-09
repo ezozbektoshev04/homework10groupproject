@@ -4,24 +4,25 @@ import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 
 import React from "react";
-
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-// const Header = React.lazy(() => import("./components/Header/Header"));
-// const Shop = React.lazy(() => import());
 import Shop from "./Pages/Shop/Shop";
 import AllProducs from "./Pages/AllProducs/AllProducs";
-// const AllProducs = React.lazy(() => import());
+
+// import Randge from "./components/Randge.jsx/Randge";
+// import Furniro from "./components/Furniro/Furniro";
 
 function App() {
   return (
     <div>
       <Router>
         <Header />
+        {/* <Randge /> */}
+        {/* <Furniro /> */}
         <Routes>
           {/* //birinchi project ↓ */}
           {/* <Route path="/" element={<AllProducs />}></Route> */}
           {/* ikkinchi project ↓ */}
+          <Route path="/" element={<Hero />}></Route>
           <Route path="/Shop" element={<Shop />}></Route>
           {/* uchinchi project ↓ */}
           {/* <Route path="/______" element={<_______ />}></Route> */}
