@@ -1,11 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Shop.scss";
+import axios from "axios";
+// import { Button } from "bootstrap";
+// import { Form } from "react-router-dom";
+
 const Shop = () => {
+  const [allPosts, setAllPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
+  const [page, setPage] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  // PAGINATION
+  let limit = 3;
+  let numOfpages = Math.ceil(allPosts.length / limit);
+  let arrBtns = [];
+  for (let i = 1; i <= numOfpages; i++) {
+    arrBtns.push(i);
+  }
+
+  const fetchPosts = async (page) => {
+    try {
+      let url = `http://localhost:3000/products?_page=${page}&_limit=${limit}`;
+      //   if (selectedCategory) {
+      //     url += `&category=${selectedCategory}`;
+      //   }
+      const res = await axios.get(url);
+      setPosts(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const fetchAllPosts = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/products");
+      setAllPosts(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchAllPosts();
+  }, []);
+
+  useEffect(() => {
+    fetchPosts(page);
+  }, [page, selectedCategory]);
+
+  const filterPostsByCategory = (category) => {
+    setSelectedCategory(category);
+    setPage(2);
+  };
   return (
     <div>
       <section className="home-section">
-        <img className="shop-img" src="../public/Shop.img.png" alt="Shop" />
+        <img className="shop-img" src="/Shop.img.png" alt="Shop" />
         <div className="container">
           <div className="home-content">
             <h1>Shop</h1>
@@ -21,18 +72,69 @@ const Shop = () => {
           </div>
         </div>
       </section>
-
+      {/* /////////////////////////////// */}
       <section className="filtered-section">
         <div className="container">
           <div className="content">
-            <select name="filter" id="">
-              <option value="">1</option>
-              <option value="">2</option>
-              <option value="">3</option>
-            </select>
+            <div className="first">
+              <select className="filter" name="filter" id="">
+                <option className="opn" value="">
+                  All
+                </option>
+                <option className="opn" value="">
+                  Syltherine
+                </option>
+                <option className="opn" value="">
+                  Leviosa
+                </option>
+                <option className="opn" value="">
+                  Lolito
+                </option>
+                <option className="opn" value="">
+                  Respira
+                </option>
+              </select>
+              <h1>Showing 1 - 8 of 30 results</h1>
+            </div>
+            <div className="second">
+              <h1>Show</h1>
+              <h2>8</h2>
+              <h1>Short By</h1>
+              <h2>Default</h2>
+            </div>
           </div>
         </div>
       </section>
+      {/* /////////////////////////////// */}
+      <div>
+        <input className="search-input" type="text" placeholder="" />
+
+        <ul className="d-flex flex-column align-items-center">
+          <div className=" cards">
+            {posts.map((news, index) => (
+              <div key={index} className="cards-item">
+                <div className="bg-img">
+                  <img src={news.img} alt="" />
+                  <p>{news.name}</p>
+                </div>
+                <h3 className="des">{news.title}</h3>
+                <div className="prices">
+                  <p className="user">{news.price}</p>
+                  <p className="user">{news.price + 1000000}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="d-flex justify-center buttons">
+            {arrBtns?.map((item) => (
+              <button key={item} onClick={() => setPage(item)}>
+                {item}
+              </button>
+            ))}
+          </div>
+        </ul>
+      </div>
+      {/* /////////////////////////////// */}
       <section className="buttom">
         <div className="container">
           <div className="buttom-content">
