@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Shop.scss";
 import axios from "axios";
+import Search from "../../components/Search/Search";
 // import { Button } from "bootstrap";
 // import { Form } from "react-router-dom";
 

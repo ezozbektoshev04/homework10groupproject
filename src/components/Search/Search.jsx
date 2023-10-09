@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import "./Search.scss";
 
 const Search = ({ show }) => {
+  const [input, setInput] = useState("");
+  const searchText = (e) => {
+    const inputText = e.target.value.toLowerCase();
+    setInput(inputText);
+  };
+
   return (
     <div className="container search">
       <form onSubmit={(e) => e.preventDefault()}>
@@ -10,7 +16,8 @@ const Search = ({ show }) => {
           name="search"
           placeholder="Search..."
           id="search"
-          className="input1"
+          className={show == false ? "input2" : "input1"}
+          onChange={searchText}
         />
       </form>
     </div>
