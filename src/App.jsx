@@ -8,6 +8,7 @@ import Details from "./Pages/SingleProduct/Details";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
+import Footer from "./components/Footer/Footer";
 
 // import React from "react";
 // import "./App.css";
@@ -32,6 +33,7 @@ function App() {
           {/* uchinchi project ↓ */}
           {/* <Route path="/______" element={<_______ />}></Route> */}
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
