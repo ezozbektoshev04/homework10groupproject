@@ -107,20 +107,21 @@ const Shop = () => {
       <div className="container">
         <div className="cards-content">
           <div className=" cards">
-            {posts.map((news, index) => (
+            {posts.map((shop, index) => (
               <div key={index} className="cards-item">
                 <div className="bg-img">
-                  <img className="boxs" src={news.img} alt="" />
-                  <p>{news.name}</p>
+                  <img className="boxs" src={shop.img} alt="" />
+                  <p>{shop.name}</p>
                 </div>
-                <h3 className="des">{news.title}</h3>
+                <h3 className="des">{shop.title}</h3>
                 <div className="prices">
-                  <p className="price">Rp {news.price}</p>
-                  <p className="notPrice">Rp {news.price + 1000000}</p>
+                  <p className="price">Rp {shop.price}</p>
+                  <p className="notPrice">Rp {shop.price + 1000000}</p>
                 </div>
                 <div className="hovered">
-                  <button className="hj">Add To Cart</button>
-                  <Link to={`/Details/${news.id}`}>rrfrfrfrf</Link>
+                  <Link to={`/Details/${shop.id}`}>
+                    <button className="hj">BATAFSIL</button>
+                  </Link>
                   <div className="items">
                     <svg
                       className="rf"

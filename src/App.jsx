@@ -3,13 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Shop from "./Pages/Shop/Shop";
-
 import Details from "./Pages/SingleProduct/Details";
 import Hero from "./components/Hero/Hero";
 // import Details from "./Pages/AllProducts/AllProducs";
 
 import Footer from "./components/Footer/Footer";
-// import AllProducs from "./Pages/AllProducs/AllProducs";
 
 function App() {
   return (

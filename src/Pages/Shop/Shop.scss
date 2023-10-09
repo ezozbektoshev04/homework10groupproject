@@ -143,7 +143,7 @@
         p {
           position: absolute;
           width: 40%;
-          bottom: 0px;
+          bottom: -16px;
           left: 0px;
           background-color: rgb(84, 84, 84);
           color: white;
@@ -212,6 +212,8 @@
           outline: none;
           border: none;
           cursor: pointer;
+          text-align: center;
+          left: 14%;
         }
         .items {
           display: flex;
