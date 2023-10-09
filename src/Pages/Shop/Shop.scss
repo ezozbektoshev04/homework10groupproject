@@ -1,0 +1,131 @@
+.home-section {
+  position: relative;
+  .shop-img {
+    width: 100%;
+  }
+  .home-content {
+    position: absolute;
+    top: 110px;
+    left: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    h1 {
+      color: #000;
+      font-family: sans-serif;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+    .sd {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      p {
+        color: #000;
+        font-family: sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+    }
+  }
+}
+// //////////////////
+
+.filtered-section {
+  background: #f9f1e7;
+  .container {
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100px;
+      .first {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .filter {
+          margin-right: 20px;
+          border: 2px solid #a59a9a;
+          border-radius: 12px;
+          padding: 9px;
+          font-family: sans-serif;
+          font-weight: bolder;
+          font-size: 20px;
+          .opn {
+            padding: 9px;
+            font-family: sans-serif;
+            font-weight: 300;
+            font-size: 20px;
+          }
+        }
+        h1 {
+          font-family: sans-serif;
+          font-size: 21px;
+          font-weight: 600;
+        }
+      }
+      .second {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 9px;
+        h1 {
+          font-family: sans-serif;
+          font-size: 21px;
+          font-weight: 600;
+        }
+        h2 {
+          margin: 0px 8px;
+          font-family: sans-serif;
+          font-size: 21px;
+          font-weight: 600;
+          background: white;
+          padding: 10px 22px;
+        }
+      }
+    }
+  }
+}
+
+/////////////////
+.buttom {
+  background: #faf3ea;
+  .buttom-content {
+    display: flex;
+    height: 270px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      .hg {
+        display: flex;
+        flex-direction: column;
+        h5 {
+          color: #242424;
+          font-family: sans-serif;
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 150%; /* 37.5px */
+        }
+        p {
+          color: #898989;
+          font-family: sans-serif;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%; /* 30px */
+        }
+      }
+    }
+  }
+}
