@@ -22,16 +22,16 @@ const Header = () => {
           </div>
           <div className="nav-icons">
             <div className="nav-icon">
-              <img src="image11.svg" alt="" />
+              <img src="/image11.svg" alt="" />
             </div>
             <div className="nav-icon">
-              <img src="image12.svg" alt="" />
+              <img src="/image12.svg" alt="" />
             </div>
             <div className="nav-icon">
-              <img src="image13.svg" alt="" />
+              <img src="/image13.svg" alt="" />
             </div>
             <div className="nav-icon">
-              <img src="image14.svg" alt="" />
+              <img src="/image14.svg" alt="" />
             </div>
           </div>
         </nav>

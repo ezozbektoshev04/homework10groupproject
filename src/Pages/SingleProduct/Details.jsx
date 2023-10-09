@@ -25,9 +25,9 @@ const Details = () => {
     fetchData();
   }, [paramId]);
 
-  if (!product) {
-    return <div>Loading...</div>;
-  }
+  //   if (!product) {
+  //     return <div>Loading...</div>;
+  //   }
 
   return (
     <div>
@@ -77,9 +77,8 @@ const Details = () => {
           </div>
         );
       })}
-      {/* Отобразите остальные свойства продукта */}
+      ;
     </div>
   );
 };
-
 export default Details;
