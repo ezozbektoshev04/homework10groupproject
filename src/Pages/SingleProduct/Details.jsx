@@ -1,41 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import axios from "axios";
-import "./Details.css"
+import "./Details.css";
 
 const Details = () => {
-  const { id } = useParams();
-  const [product, setProduct] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "http://localhost:3000/products/" + id
-        );
-        setProduct(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchData();
-  }, [id]);
-
-  if (!product) {
-    return <div>Loading...</div>;
-  }
-
-  return (
-    <div>
-      <h2>{news.name}</h2>
-      <p>{product.description}</p>
-      {/* Отобразите остальные свойства продукта */}
-    </div>
-  );
-};
-
   const param = useParams();
   const [product, setProduct] = useState([]);
   // console.log(param.id * 1);
@@ -61,16 +29,120 @@ const Details = () => {
   //   return <div>Loading...</div>;
   // }
 
+  const [myProducts, setMyProducts] = useState([]);
+  const [sliceimg, setSliceimg] = useState([]);
+  const [sliceimg2, setSliceimg2] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/products");
+        setMyProducts(response.data);
+        setSliceimg(myProducts.slice(-3, -1));
+        setSliceimg2(myProducts.slice(-4, 4));
+        // console.log(sliceimg);
+        console.log(setSliceimg2);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  const [posts, setPosts] = useState([]);
+  const [allPosts, setAllPosts] = useState([]);
+
+  let limit = 6;
+  let numOfpages = Math.ceil(allPosts.length / limit);
+  let arrBtns = [];
+  for (let i = 1; i <= numOfpages; i++) {
+    arrBtns.push(i);
+  }
+  useEffect(() => {
+    const fetchPosts = async (page) => {
+      try {
+        let url = `http://localhost:3000/products?_page=${page}&_limit=${limit}`;
+        const res = await axios.get(url);
+        setPosts(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchPosts();
+  }, []);
+
   return (
     <div>
-      {product.map((el) => {
-        return (
-          <div key={el.id}>
-            <h1 style={{ marginTop: "200px" }}>{el.title}</h1>
+      {/* Umar aka section */}
+
+      <p>Card details</p>
+
+      {/* Elbotir section */}
+      <section className="elbotir-section1">
+        <div className="container">
+          <div className="phars">
+            <b>Description</b>
+            <span>Additional Information</span>
+            <span>Reviews 5</span>
           </div>
-        );
-      })}
-      {/* Отобразите остальные свойства продукта */}
+          <p className="p1">
+            Embodying the raw, wayward spirit of rock roll, the Kilburn portable
+            active stereo speaker takes the unmistakable look and sound of
+            Marshall, unplugs the chords, and takes the show on the road.
+          </p>
+          <p className="p2">
+            Weighing in under 7 pounds, the Kilburn is a lightweight piece of
+            vintage styled engineering. Setting the bar as one of the loudest
+            speakers in its class, the Kilburn is a compact, stout-hearted hero
+            with a well-balanced audio which boasts a clear midrange and
+            extended highs for a sound that is both articulate and pronounced.
+            The analogue knobs allow you to fine tune the controls to your
+            personal preferences while the guitar-influenced leather strap
+            enables easy and stylish travel.
+          </p>
+          <div className="flex-class">
+            <img
+              src="../../../public/Cloud sofa three seater + ottoman_2 1.svg"
+              alt="Eror"
+            />
+            <img
+              src="../../../public/Cloud sofa three seater + ottoman_2 1.svg"
+              alt="Eror"
+            />
+          </div>
+        </div>
+      </section>
+      {/* Elbotir section2 */}
+      <section className="elbotir-section2">
+        <div className="container">
+          <div className="cards-content">
+            <div className=" cards">
+              {posts.map((news, index) => (
+                <div key={index} className="cards-item">
+                  <div className="bg-img">
+                    <img className="boxs" src={news.img} alt="" />
+                    <p>{news.name}</p>
+                  </div>
+                  <h3 className="des">{news.title}</h3>
+                  <div className="prices">
+                    <p className="price">Rp {news.price}</p>
+                    <p className="notPrice">Rp {news.price + 1000000}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="d-flex justify-center buttons">
+              {/* {arrBtns?.map((item) => (
+                <button key={item} onClick={() => setPage(item)}>
+                  {item}
+                </button>
+              ))} */}
+            </div>
+          </div>
+          <button className="showMore">
+            <NavLink to="/Shop">Show More</NavLink>
+          </button>
+        </div>
+      </section>
     </div>
   );
 };

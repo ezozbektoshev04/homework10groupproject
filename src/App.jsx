@@ -7,12 +7,11 @@ import Details from "./Pages/SingleProduct/Details";
 
 import Hero from "./components/Hero/Hero";
 import Footer from "./components/Footer/Footer";
-// import AllProducs from "./Pages/AllProducs/AllProducs";
 
 function App() {
   return (
     <div>
-      <MyCarousel />
+      {/* <MyCarousel /> */}
       <Router>
         <Header />
         {/* <Randge /> */}
