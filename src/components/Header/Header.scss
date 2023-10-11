@@ -28,6 +28,63 @@ header {
         display: flex;
         align-items: center;
         column-gap: 45px;
+        .nav-icon {
+          cursor: pointer;
+        }
+        .modal {
+          position: fixed;
+          top: 0px;
+          // width: 500px;
+          // left: 0;
+          // right: 0;
+          bottom: 50px;
+          background-color: rgba(0, 0, 0, 0.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .modal-content {
+            position: absolute;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            top: 90px;
+            right: 0;
+            width: 500px;
+            .modal-text {
+              h1 {
+                color: #000;
+                font-family: Poppins;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+              }
+              .close {
+                position: absolute;
+                top: 27px;
+                right: 27px;
+                cursor: pointer;
+              }
+            }
+            .buttons-modal {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              // justify-content: center;
+              gap: 22px;
+              .buttonM {
+                padding: 9px;
+                border-radius: 9px;
+                outline: none;
+                border: 2px solid transparent;
+                transition: 0.4s;
+                &:hover {
+                  border: 2px solid #000000;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

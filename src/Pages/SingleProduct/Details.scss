@@ -133,6 +133,37 @@
       flex-direction: row;
       align-items: center;
       gap: 10px;
+      .btn-div {
+        border-radius: 10px;
+        border: 1px solid #9f9f9f;
+        background: #fff;
+        width: 123px;
+        height: 44px;
+        color: #000;
+        display: flex;
+        align-items: center;
+        gap: 19px;
+        .decrementButton {
+          border: transparent;
+          font-family: sans-serif;
+          font-size: 50px;
+          line-height: 0px;
+          padding-bottom: 7px;
+          background: transparent;
+        }
+        .counts {
+          border: transparent;
+          font-size: 30px;
+          line-height: 0px;
+          padding: 0px 7px;
+        }
+        .incrementButton {
+          border: transparent;
+          font-size: 40px;
+          line-height: 0px;
+          text-align: center;
+        }
+      }
       .btn-item {
         display: flex;
         align-items: center;

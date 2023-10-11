@@ -9,19 +9,23 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import Details from "./Pages/AllProducts/AllProducs";
 
 import Footer from "./components/Footer/Footer";
-import Cart from "./Pages/Cartdemo/Cartdemo";
+import Cart from "./Pages/Cart/Cart";
 
 function App() {
   return (
     <div>
+      {/* <MyCarousel /> */}
       <Router>
         <Header />
+        {/* <Randge /> */}
+        {/* <Furniro /> */}
         <Routes>
           {/* //birinchi project ↓ */}
           {/* <Route path="/" element={<AllProducs />}></Route> */}
           {/* ikkinchi project ↓ */}
           <Route path="/" element={<Hero />}></Route>
           <Route path="/Shop" element={<Shop />}></Route>
+          <Route path="/Cart" element={<Cart />}></Route>
           <Route path="/Details/:id" element={<Details />}></Route>
           <Route path="/checkout" element></Route>
           <Route path="/cart" element={<Cart/>}></Route>
