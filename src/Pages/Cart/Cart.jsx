@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./cart.css";
 const Cart = () => {
   //   const [myProducts, setMyProducts] = useState([]);
@@ -23,9 +23,13 @@ const Cart = () => {
         <img src="../../../public/Meubel House_Logos-05.svg" alt="Eror" />
         <h2>Cart</h2>
         <p>
-          <Link to="/">Home</Link>{" "}
-          <img src="../../../public/dashicons_arrow-down-alt2.svg" alt="Eror" />{" "}
-          <Link to="/Cart">Cart</Link>
+          <Link to="/" className="linkColor">
+            Home
+          </Link>
+          <img src="../../../public/dashicons_arrow-down-alt2.svg" alt="Eror" />
+          <Link to="/Cart" className="linkColor">
+            Cart
+          </Link>
         </p>
       </div>
       <div className="container">
@@ -48,9 +52,11 @@ const Cart = () => {
             </table>
           </div>
           <div className="cart-right">
+            <h2>Cart Totals</h2>
             {
               // map cart
             }
+            <button className="checkout">Check Out</button>
           </div>
         </div>
       </div>
