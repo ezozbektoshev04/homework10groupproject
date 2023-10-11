@@ -79,6 +79,9 @@ const Shop = () => {
   //   setSelectedPost(aa);
   //   console.log(selectedPost);
   // };
+  function addToCart(item){
+    console.log(item);
+  }
 
   return (
     <div>
@@ -159,7 +162,7 @@ const Shop = () => {
                 </div>
                 <div className="hovered">
                   <Link to={`/Details/${shop.id}`}>
-                    <button className="hj">BATAFSIL</button>
+                    <button className="hj">Shop Details</button>
                   </Link>
                   <div className="items">
                     <svg

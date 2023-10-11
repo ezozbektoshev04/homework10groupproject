@@ -189,7 +189,7 @@
       }
       .hovered {
         display: none;
-        transition: 0.4s ease;
+        transition: 1s ease;
         position: absolute;
         border-radius: 47px;
         top: 0px;
@@ -217,8 +217,8 @@
         }
         .items {
           display: flex;
-          flex-direction: row;
-          align-items: center;
+          // flex-direction: row;
+          // align-items: center;
           gap: 4px;
           .rf {
             width: 30px;

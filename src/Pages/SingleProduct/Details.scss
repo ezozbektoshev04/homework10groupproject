@@ -151,6 +151,12 @@
         line-height: normal;
         &:nth-child(2) {
           width: 153px;
+          &:hover{
+            color: #fff;
+            background: orange;
+            border: none;
+            transition: 0.4s;
+          }
         }
         &:nth-child(3) {
           width: 193px;

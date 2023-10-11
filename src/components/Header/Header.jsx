@@ -36,7 +36,7 @@ const Header = ({ searchText }) => {
               <img src="/image13.svg" alt="" />
             </div>
             <div className="nav-icon">
-              <img src="/image14.svg" alt="" />
+              <NavLink to='/cart'><img src="/image14.svg" alt="cart" /></NavLink>
             </div>
           </div>
         </nav>

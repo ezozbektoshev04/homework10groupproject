@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import Details from "./Pages/AllProducts/AllProducs";
 
 import Footer from "./components/Footer/Footer";
+import Cart from "./Pages/Cartdemo/Cartdemo";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
           <Route path="/" element={<Hero />}></Route>
           <Route path="/Shop" element={<Shop />}></Route>
           <Route path="/Details/:id" element={<Details />}></Route>
+          <Route path="/checkout" element></Route>
+          <Route path="/cart" element={<Cart/>}></Route>
           {/* uchinchi project ↓ */}
           {/* <Route path="/______" element={<_______ />}></Route> */}
         </Routes>

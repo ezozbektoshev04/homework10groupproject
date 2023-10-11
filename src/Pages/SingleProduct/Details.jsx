@@ -28,6 +28,11 @@ const Details = () => {
   //   if (!product) {
   //     return <div>Loading...</div>;
   //   }
+  const [cartItem, setCartItem] = useState([])
+  function addToCart(item){
+    setCartItem([...cartItem, item]);
+  }
+  localStorage.setItem("cartItems", JSON.stringify(cartItem))
 
   return (
     <div>
@@ -70,7 +75,7 @@ const Details = () => {
               </div>
               <div className="btns">
                 <h4 className="btn-item">- 1 +</h4>
-                <h4 className="btn-item">Add To Cart</h4>
+                <button className="btn-item" onClick={()=>addToCart(el)}>Add To Cart</button>
                 <h4 className="btn-item">+ Compare</h4>
               </div>
             </div>
