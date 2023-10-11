@@ -48,7 +48,7 @@ const Header = ({ searchText }) => {
               <img onClick={openModal} src="/image14.svg" alt="" />
             </div>
             {isOpen && (
-              <div className="modal" onClick={closeModal}>
+              <div className="modal">
                 <div className="modal-content">
                   <div className="modal-text">
                     <h1>Shopping Cart</h1>
