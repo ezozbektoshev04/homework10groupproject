@@ -3,6 +3,7 @@ import "./Hero.scss";
 import Randge from "../Randge.jsx/Randge";
 import Furniro from "../Furniro/Furniro";
 import OurProducts from "../ourProducts/OurProducts";
+import Carousel from "../Corusel/Carousel";
 const Hero = () => {
   return (
     <>
@@ -20,7 +21,8 @@ const Hero = () => {
         </div>
       </section>
       <Randge />
-      <OurProducts/>
+      <OurProducts />
+      <Carousel />
       <Furniro />
     </>
   );
