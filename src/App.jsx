@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Footer from "./components/Footer/Footer";
 import Cart from "./Pages/Cart/Cart";
+import Contact from "./Pages/contact/Contact";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           {/* ikkinchi project ↓ */}
           <Route path="/" element={<Hero />}></Route>
           <Route path="/Shop" element={<Shop />}></Route>
+          <Route path="/Contact" element={<Contact />}></Route>
           <Route path="/Cart" element={<Cart />}></Route>
           <Route path="/Details/:id" element={<Details />}></Route>
           <Route path="/checkout" element></Route>

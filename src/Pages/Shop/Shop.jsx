@@ -227,7 +227,7 @@ const Shop = () => {
         </div>
       </div>
       {/* /////////////////////////////// */}
-      <section className="buttom">
+      {/* <section className="buttom">
         <div className="container">
           <div className="buttom-content">
             <div className="item">
@@ -335,7 +335,7 @@ const Shop = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
