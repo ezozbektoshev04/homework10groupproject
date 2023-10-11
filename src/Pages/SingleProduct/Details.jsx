@@ -85,7 +85,8 @@ const Details = () => {
       case "decrement":
         return {
           ...state,
-          firstCounter: state.firstCounter - action.payload,
+          firstCounter:
+            state.firstCounter > 0 ? state.firstCounter - action.payload : 0,
         };
     }
   };
