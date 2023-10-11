@@ -35,15 +35,15 @@ const Header = ({ searchText }) => {
             <NavLink className="nav-link">Contact</NavLink>
           </div>
           <div className="nav-icons">
-            <div className="nav-icon">
+            {/* <div className="nav-icon">
               <img src="/image11.svg" alt="" />
-            </div>
+            </div> */}
             <div className="nav-icon" onClick={showSearchBar}>
               <img src="/image12.svg" alt="" />
             </div>
-            <div className="nav-icon">
+            {/* <div className="nav-icon">
               <img src="/image13.svg" alt="" />
-            </div>
+            </div> */}
             <div className="nav-icon">
               <img onClick={openModal} src="/image14.svg" alt="" />
             </div>
