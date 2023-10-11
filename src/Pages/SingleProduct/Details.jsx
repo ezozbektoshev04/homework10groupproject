@@ -3,6 +3,7 @@ import { Link, NavLink, useParams } from "react-router-dom";
 import axios from "axios";
 import "./Details.css";
 import "./Details.scss";
+import Header from "../../components/Header/Header";
 //↓↓↓↓↓↓↓↓↓↓↓↓↓Umar qigan↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 const Details = () => {
   const param = useParams();
@@ -72,7 +73,7 @@ const Details = () => {
 
   //↓↓↓↓↓↓↓↓↓↓↓
   const initialState = {
-    firstCounter: 0,
+    firstCounter: 1,
   };
 
   const reducer = (state = initialState, action) => {
@@ -92,6 +93,12 @@ const Details = () => {
   };
 
   const [count, dispatch] = useReducer(reducer, initialState);
+
+  // const [cartItem, setCartItem] = useState([])
+  // function addToCart(item){
+  //   setCartItem([...cartItem, item])
+  // }
+  // localStorage.setItem("cartItems", JSON.stringify(cartItem))
   // ↑↑↑↑↑↑↑↑↑↑
   return (
     <div>
@@ -150,7 +157,9 @@ const Details = () => {
                     +
                   </button>
                 </div>
-                <button className="btn-item">Add To Cart</button>
+                <button className="btn-item" onClick={() => addToCart(el)}>
+                  Add To Cart
+                </button>
               </div>
             </div>
           </div>
@@ -224,6 +233,7 @@ const Details = () => {
           </button>
         </div>
       </section>
+      {/* <Header counter={count.firstCounter} /> */}
     </div>
   );
 };

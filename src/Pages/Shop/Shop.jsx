@@ -75,10 +75,41 @@ const Shop = () => {
     setSelectedCategory(category);
     setPage(2);
   };
+  // const [sher, setSher] = useState([]);
+
+  // const addToCart = (id) => {
+  //   const aa = posts.filter((el) => el.id === id);
+  //   localStorage.setItem("selected", JSON.stringify(aa));
+  //   // console.log(bb);
+  // };
+
+  // console.log(bb);
+  // setSher([...sher, bb]);
+  const [orders, setOrders] = useState([]);
+
+  const fetchAllorders = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/orders");
+      setOrders(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    fetchAllorders();
+  }, []);
+
+  const addToCart = (shop) => {
+    try {
+      axios.post("http://localhost:3000/orders/", shop);
+      fetchAllorders();
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   return (
     <div>
-      <Header searchText={searchText} />
       <section className="home-section">
         <img className="shop-img" src="/Shop.img.png" alt="Shop" />
         <div className="container">
@@ -155,7 +186,9 @@ const Shop = () => {
                 </div>
                 <div className="hovered">
                   <Link to={`/Details/${shop.id}`}>
-                    <button className="hj">BATAFSIL</button>
+                    <button className="hj" onClick={() => addToCart(shop)}>
+                      Shop Details
+                    </button>
                   </Link>
                   <div className="items">
                     <svg
@@ -220,7 +253,7 @@ const Shop = () => {
         </div>
       </div>
       {/* /////////////////////////////// */}
-      <section className="buttom">
+      {/* <section className="buttom">
         <div className="container">
           <div className="buttom-content">
             <div className="item">
@@ -328,7 +361,8 @@ const Shop = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <Header searchText={searchText} />
     </div>
   );
 };
