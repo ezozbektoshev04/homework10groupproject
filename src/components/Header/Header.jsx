@@ -8,6 +8,15 @@ const Header = ({ searchText }) => {
   const showSearchBar = () => {
     setShow(!show);
   };
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
   return (
     <header>
       <div className="container">
@@ -36,8 +45,25 @@ const Header = ({ searchText }) => {
               <img src="/image13.svg" alt="" />
             </div>
             <div className="nav-icon">
-              <img src="/image14.svg" alt="" />
+              <img onClick={openModal} src="/image14.svg" alt="" />
             </div>
+            {isOpen && (
+              <div className="modal">
+                <div className="modal-content">
+                  <span className="close" onClick={closeModal}>
+                    &times;
+                  </span>
+                  <h2>Модальное окно</h2>
+                  <p>
+                    Содержимое модального окна.. Lorem ipsum dolor sit, amet
+                    consectetur adipisicing elit. Quo nemo animi eos tempore
+                    nesciunt, aspernatur qui quos cupiditate vero officiis atque
+                    consequuntur rem! Id molestiae hic molestias aspernatur quo
+                    at!.
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         </nav>
       </div>
