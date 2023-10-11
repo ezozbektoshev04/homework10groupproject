@@ -149,7 +149,7 @@ const Details = () => {
                     +
                   </button>
                 </div>
-                <h4 className="btn-item">Add To Cart</h4>
+                <button className="btn-item">Add To Cart</button>
               </div>
             </div>
           </div>
