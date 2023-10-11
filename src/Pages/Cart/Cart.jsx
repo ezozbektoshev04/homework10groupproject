@@ -1,22 +1,9 @@
 import { Link } from "react-router-dom";
-import "./cart.css";
+import "./cart.scss";
+import { useState } from "react";
 const Cart = () => {
-  //   const [myProducts, setMyProducts] = useState([]);
-  //   const [myProductCartImg, setMyProductCartImg] = useState([]);
-  //   useEffect(() => {
-  //     const fetchData = async () => {
-  //       try {
-  //         const response = await axios.get("http://localhost:3000/products");
-  //         const data = response.data;
-  //         setMyProducts(data);
-  //         setMyProductCartImg(data.img);
-  //       } catch (error) {
-  //         console.log(error);
-  //       }
-  //     };
-
-  //     fetchData();
-  //   }, []);
+//  MAPPING/////////////////////////////
+  const [getCartItem] = useState(JSON.parse(localStorage.getItem('cartItems')))
   return (
     <section className="cart-section">
       <div className="cart-header">
@@ -46,7 +33,7 @@ const Cart = () => {
               </thead>
               <tbody>
                 {
-                  // Map all trs
+                  getCartItem
                 }
               </tbody>
             </table>

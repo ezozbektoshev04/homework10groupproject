@@ -75,11 +75,29 @@ const Details = () => {
     firstCounter: 0,
   };
 
-  //   if (!product) {
-  //     return <div>Loading...</div>;
-  //   }
+  const reducer = (state = initialState, action) => {
+    switch (action.type) {
+      case "increment":
+        return {
+          ...state,
+          firstCounter: state.firstCounter + action.payload,
+        };
+      case "decrement":
+        return {
+          ...state,
+          firstCounter:
+            state.firstCounter > 0 ? state.firstCounter - action.payload : 0,
+        };
+    }
+  };
 
   const [count, dispatch] = useReducer(reducer, initialState);
+
+  const [cartItem, setCartItem] = useState([])
+  function addToCart(item){
+    setCartItem([...cartItem, item])
+  }
+  localStorage.setItem("cartItems", JSON.stringify(cartItem))
   // ↑↑↑↑↑↑↑↑↑↑
   return (
     <div>
@@ -123,9 +141,22 @@ const Details = () => {
                 <p></p>
               </div>
               <div className="btns">
-                <h4 className="btn-item">- 1 +</h4>
-                <h4 className="btn-item">Add To Cart</h4>
-                <h4 className="btn-item">+ Compare</h4>
+                <div className="btn-div btn-item">
+                  <button
+                    className="decrementButton"
+                    onClick={() => dispatch({ type: "decrement", payload: 1 })}
+                  >
+                    -
+                  </button>
+                  <button className="counts">{count.firstCounter}</button>
+                  <button
+                    className="incrementButton"
+                    onClick={() => dispatch({ type: "increment", payload: 1 })}
+                  >
+                    +
+                  </button>
+                </div>
+                <button className="btn-item" onClick={() => addToCart(el)}>Add To Cart</button>
               </div>
             </div>
           </div>
