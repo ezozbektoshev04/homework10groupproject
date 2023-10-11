@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Header.scss";
 import Search from "../Search/Search";
 
@@ -48,19 +48,27 @@ const Header = ({ searchText }) => {
               <img onClick={openModal} src="/image14.svg" alt="" />
             </div>
             {isOpen && (
-              <div className="modal">
+              <div className="modal" onClick={closeModal}>
                 <div className="modal-content">
-                  <span className="close" onClick={closeModal}>
-                    &times;
-                  </span>
-                  <h2>Модальное окно</h2>
-                  <p>
-                    Содержимое модального окна.. Lorem ipsum dolor sit, amet
-                    consectetur adipisicing elit. Quo nemo animi eos tempore
-                    nesciunt, aspernatur qui quos cupiditate vero officiis atque
-                    consequuntur rem! Id molestiae hic molestias aspernatur quo
-                    at!.
-                  </p>
+                  <div className="modal-text">
+                    <h1>Shopping Cart</h1>
+                    <img
+                      className="close"
+                      onClick={closeModal}
+                      src="/x.svg"
+                      alt=""
+                    />
+                    <hr />
+                  </div>
+                  {/* map */}
+                  <div className="buttons-modal">
+                    <Link to="/Cart">
+                      <button className="buttonM">Cart</button>
+                    </Link>
+                    <Link to="/Checkout">
+                      <button className="buttonM">Check Out</button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             )}
