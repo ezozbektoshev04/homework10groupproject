@@ -16,6 +16,7 @@ const Shop = () => {
   const [page, setPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedPost, setSelectedPost] = useState("");
+  // const []
 
   // console.log(input);
   // PAGINATION
@@ -39,7 +40,7 @@ const Shop = () => {
   const searchText = (e) => {
     const inputText = e.target.value.toLowerCase();
     setInput(inputText);
-    console.log(input);
+    // console.log(input);
   };
 
   const filtered = posts.filter((el) => {
@@ -74,11 +75,6 @@ const Shop = () => {
     setSelectedCategory(category);
     setPage(2);
   };
-  // const filterData = (e) => {
-  //   const aa = e.target.value;
-  //   setSelectedPost(aa);
-  //   console.log(selectedPost);
-  // };
 
   return (
     <div>

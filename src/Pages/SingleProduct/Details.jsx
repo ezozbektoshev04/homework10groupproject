@@ -38,7 +38,7 @@ const Details = () => {
         setSliceimg(myProducts.slice(-3, -1));
         setSliceimg2(myProducts.slice(-4, 4));
         // console.log(sliceimg);
-        console.log(setSliceimg2);
+        // console.log(setSliceimg2);
       } catch (error) {
         console.log(error);
       }
