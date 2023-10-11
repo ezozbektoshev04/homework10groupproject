@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import Details from "./Pages/AllProducts/AllProducs";
 
 import Footer from "./components/Footer/Footer";
+import Cart from "./Pages/Cart/Cart";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           {/* ikkinchi project ↓ */}
           <Route path="/" element={<Hero />}></Route>
           <Route path="/Shop" element={<Shop />}></Route>
+          <Route path="/Cart" element={<Cart />}></Route>
           <Route path="/Details/:id" element={<Details />}></Route>
           {/* uchinchi project ↓ */}
           {/* <Route path="/______" element={<_______ />}></Route> */}
