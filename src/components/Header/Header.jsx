@@ -63,10 +63,14 @@ const Header = ({ searchText }) => {
                   {/* map */}
                   <div className="buttons-modal">
                     <Link to="/Cart">
-                      <button className="buttonM">Cart</button>
+                      <button className="buttonM" onClick={closeModal}>
+                        Cart
+                      </button>
                     </Link>
                     <Link to="/Checkout">
-                      <button className="buttonM">Check Out</button>
+                      <button className="buttonM" onClick={closeModal}>
+                        Check Out
+                      </button>
                     </Link>
                   </div>
                 </div>
