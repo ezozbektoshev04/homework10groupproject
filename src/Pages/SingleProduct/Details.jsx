@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useReducer } from "react";
 import { Link, NavLink, useParams } from "react-router-dom";
 import axios from "axios";
 import "./Details.css";
 import "./Details.scss";
-
+//↓↓↓↓↓↓↓↓↓↓↓↓↓Umar qigan↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 const Details = () => {
   const param = useParams();
   const [product, setProduct] = useState([]);
@@ -25,11 +25,8 @@ const Details = () => {
 
     fetchData();
   }, [paramId]);
-
-  //   if (!product) {
-  //     return <div>Loading...</div>;
-  //   }
-
+  //↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+  // Elbotir qilgan ↓↓↓↓↓↓↓↓↓↓↓↓↓/
   const [myProducts, setMyProducts] = useState([]);
   const [sliceimg, setSliceimg] = useState([]);
   const [sliceimg2, setSliceimg2] = useState([]);
@@ -71,10 +68,93 @@ const Details = () => {
     fetchPosts();
   }, []);
 
+  //↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+  //↓↓↓↓↓↓↓↓↓↓↓
+  const initialState = {
+    firstCounter: 0,
+  };
+
+  const reducer = (state = initialState, action) => {
+    switch (action.type) {
+      case "increment":
+        return {
+          ...state,
+          firstCounter: state.firstCounter + action.payload,
+        };
+      case "decrement":
+        return {
+          ...state,
+          firstCounter: state.firstCounter - action.payload,
+        };
+    }
+  };
+
+  const [count, dispatch] = useReducer(reducer, initialState);
+  // ↑↑↑↑↑↑↑↑↑↑
   return (
     <div>
       {/* Umar aka section */}
-      <p>Card details</p>
+      {product.map((el) => {
+        return (
+          <div className="details-card" key={el.id}>
+            <div className="top">
+              <div className="container">
+                <Link to={"/"}>
+                  <h1 className="h11">Home →</h1>
+                </Link>
+                <Link to={"/Shop"}>
+                  <h1 className="h11">Shop →</h1>
+                </Link>
+                <h1 className="h11">{el.name}</h1>
+              </div>
+            </div>
+            <div className="left">
+              <img src={el.img} alt="" />
+            </div>
+            <div className="right">
+              <h1>{el.name}</h1>
+
+              <p className="de">Pr {el.price}</p>
+              <div className="ffr">
+                <img src="/detail.img.yulduz.png" alt="" />
+                <h4>5 Customer Review</h4>
+              </div>
+              <h2>Pr {el.decribtion}</h2>
+              <h6>Size</h6>
+              <div className="sizes">
+                <p>L</p>
+                <p>XL</p>
+                <p>XS</p>
+              </div>
+              <h6>Color</h6>
+              <div className="colors">
+                <p></p>
+                <p></p>
+                <p></p>
+              </div>
+              <div className="btns">
+                <div className="btn-div btn-item">
+                  <button
+                    className="decrementButton"
+                    onClick={() => dispatch({ type: "decrement", payload: 1 })}
+                  >
+                    -
+                  </button>
+                  <button className="counts">{count.firstCounter}</button>
+                  <button
+                    className="incrementButton"
+                    onClick={() => dispatch({ type: "increment", payload: 1 })}
+                  >
+                    +
+                  </button>
+                </div>
+                <h4 className="btn-item">Add To Cart</h4>
+              </div>
+            </div>
+          </div>
+        );
+      })}
       {/* Elbotir section */}
       <section className="elbotir-section1">
         <div className="container">
@@ -124,6 +204,7 @@ const Details = () => {
                   <h3 className="des">{news.title}</h3>
                   <div className="prices">
                     <p className="price">Rp {news.price}</p>
+
                     <p className="notPrice">Rp {news.price + 1000000}</p>
                   </div>
                 </div>
@@ -142,53 +223,6 @@ const Details = () => {
           </button>
         </div>
       </section>
-      {product.map((el) => {
-        return (
-          <div className="details-card" key={el.id}>
-            <div className="top">
-              <div className="container">
-                <Link to={"/"}>
-                  <h1 className="h11">Home →</h1>
-                </Link>
-                <Link to={"/Shop"}>
-                  <h1 className="h11">Shop →</h1>
-                </Link>
-                <h1 className="h11">{el.name}</h1>
-              </div>
-            </div>
-            <div className="left">
-              <img src={el.img} alt="" />
-            </div>
-            <div className="right">
-              <h1>{el.name}</h1>
-              <p className="de">Pr {el.price}</p>
-              <div className="ffr">
-                <img src="/detail.img.yulduz.png" alt="" />
-                <h4>5 Customer Review</h4>
-              </div>
-              <h2>Pr {el.decribtion}</h2>
-              <h6>Size</h6>
-              <div className="sizes">
-                <p>L</p>
-                <p>XL</p>
-                <p>XS</p>
-              </div>
-              <h6>Color</h6>
-              <div className="colors">
-                <p></p>
-                <p></p>
-                <p></p>
-              </div>
-              <div className="btns">
-                <h4 className="btn-item">- 1 +</h4>
-                <h4 className="btn-item">Add To Cart</h4>
-                <h4 className="btn-item">+ Compare</h4>
-              </div>
-            </div>
-          </div>
-        );
-      })}
-      ;
     </div>
   );
 };
