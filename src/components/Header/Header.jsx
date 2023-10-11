@@ -46,7 +46,7 @@ const Header = ({ searchText }) => {
               <img src="/image13.svg" alt="" />
             </div> */}
             <div className="nav-icon">
-              <NavLink to='/cart'><img src="/image14.svg" alt="cart" /></NavLink>
+              {/* <NavLink to='/cart'><img src="/image14.svg" alt="cart" /></NavLink> */}
               <img onClick={openModal} src="/image14.svg" alt="" />
             </div>
             {isOpen && (
