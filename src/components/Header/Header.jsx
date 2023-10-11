@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Header.scss";
 import Search from "../Search/Search";
-
 const Header = ({ searchText }) => {
   const [show, setShow] = useState(false);
   const showSearchBar = () => {
@@ -32,7 +31,9 @@ const Header = ({ searchText }) => {
               Shop
             </NavLink>
             <NavLink className="nav-link">About</NavLink>
-            <NavLink className="nav-link">Contact</NavLink>
+            <NavLink className="nav-link" to="/Contact">
+              Contact
+            </NavLink>
           </div>
           <div className="nav-icons">
             {/* <div className="nav-icon">
