@@ -16,6 +16,7 @@ const Shop = () => {
   const [page, setPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedPost, setSelectedPost] = useState("");
+  // const []
 
   // console.log(input);
   // PAGINATION
@@ -39,7 +40,7 @@ const Shop = () => {
   const searchText = (e) => {
     const inputText = e.target.value.toLowerCase();
     setInput(inputText);
-    console.log(input);
+    // console.log(input);
   };
 
   const filtered = posts.filter((el) => {
@@ -74,18 +75,41 @@ const Shop = () => {
     setSelectedCategory(category);
     setPage(2);
   };
-  // const filterData = (e) => {
-  //   const aa = e.target.value;
-  //   setSelectedPost(aa);
-  //   console.log(selectedPost);
+  // const [sher, setSher] = useState([]);
+
+  // const addToCart = (id) => {
+  //   const aa = posts.filter((el) => el.id === id);
+  //   localStorage.setItem("selected", JSON.stringify(aa));
+  //   // console.log(bb);
   // };
-  function addToCart(item){
-    console.log(item);
-  }
+
+  // console.log(bb);
+  // setSher([...sher, bb]);
+  const [orders, setOrders] = useState([]);
+
+  const fetchAllorders = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/orders");
+      setOrders(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    fetchAllorders();
+  }, []);
+
+  const addToCart = (shop) => {
+    try {
+      axios.post("http://localhost:3000/orders/", shop);
+      fetchAllorders();
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   return (
     <div>
-      <Header searchText={searchText} />
       <section className="home-section">
         <img className="shop-img" src="/Shop.img.png" alt="Shop" />
         <div className="container">
@@ -162,7 +186,9 @@ const Shop = () => {
                 </div>
                 <div className="hovered">
                   <Link to={`/Details/${shop.id}`}>
-                    <button className="hj">Shop Details</button>
+                    <button className="hj" onClick={() => addToCart(shop)}>
+                      Shop Details
+                    </button>
                   </Link>
                   <div className="items">
                     <svg
@@ -336,6 +362,7 @@ const Shop = () => {
           </div>
         </div>
       </section> */}
+      <Header searchText={searchText} />
     </div>
   );
 };

@@ -1,0 +1,91 @@
+.checkout-page{
+    margin-top: 98px;
+    padding: 38px;
+    .container{
+        .checkout-page__wrapper{
+            display: flex;
+            justify-content: space-between;
+            .checkout__total{
+                display: flex;
+                gap: 65px;
+                .total__left{
+                    h1{
+                        color: #000;
+                        font-family: Poppins;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                    }
+                    h3{
+                        color: #9F9F9F;
+                        font-family: Poppins;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        margin-top: 14px;
+                        span{
+                            color: #000;
+                            font-family: Poppins;
+                            font-size: 12px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: normal;
+                            margin-left: 11px;
+                            gap: 11px;
+                        }
+                        h4,h5{
+                            color: #000;
+                            font-family: Poppins;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                        }
+                        h4{
+                            margin-top: 22px;
+                        }
+                        h5{
+                            margin-top: 22px;
+                        }
+                    }
+                }
+                .total__right{
+                    text-align: right;
+                    h1{
+                        color: #000;
+                        font-family: Poppins;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                    }
+                    h3,h4{
+                        color: #000;
+                        font-family: Poppins;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 300;
+                        line-height: normal;
+                    }
+                    h3{
+                        margin-top: 14px;
+                    }
+                    h4{
+                        margin-top: 14px;
+                    }
+                    h5{
+                        color: var(--Primary, #B88E2F);
+                        font-family: Poppins;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        margin-top: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -66,6 +66,60 @@ header {
                 cursor: pointer;
               }
             }
+            .selected-data {
+              padding-bottom: 28px;
+              .selected-card {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-bottom: 28px;
+                .photo120 {
+                  width: 111px;
+                  height: 90px;
+                  object-fit: contain;
+                }
+              }
+              .div-content {
+                .p1-content {
+                  color: #000;
+                  // font-family: Poppins;
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+                }
+                .p2-content {
+                  color: var(--Primary, #b88e2f);
+                  // font-family: Poppins;
+                  font-size: 12px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: normal;
+                  .sp1 {
+                    padding-right: 15px;
+                    color: #000;
+                    // font-family: Poppins;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: normal;
+                  }
+                  .sp2 {
+                    padding-right: 15px;
+
+                    color: #000;
+                    // font-family: Poppins;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: normal;
+                  }
+                }
+              }
+              .div-img2 {
+                cursor: pointer;
+              }
+            }
             .buttons-modal {
               display: flex;
               flex-direction: row;

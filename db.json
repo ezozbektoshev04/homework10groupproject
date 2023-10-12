@@ -123,14 +123,12 @@
       "category": "-50%",
       "decribtion": "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a soun"
     },
-
     {
       "id": 14,
       "name": "Leviosa",
       "img": "../../public/image2.png",
       "title": "Stylish cafe chair",
       "category": "-30%",
-
       "decribtion": "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a soun"
     },
     {
@@ -283,6 +281,27 @@
       "price": 5000000,
       "category": "-30%",
       "decribtion": "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts "
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "name": "Syltherine",
+      "img": "/public/image6.png",
+      "title": "Stylish cafe chair",
+      "price": 2500000,
+      "priceTwo": 350000,
+      "category": "New",
+      "decribtion": "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts "
+    },
+    {
+      "id": 2,
+      "name": "Levosa",
+      "img": "/public/image7.png",
+      "title": "Stylish cafe chair",
+      "price": 2500000,
+      "category": "-30%",
+      "decribtion": "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a"
     }
   ]
 }

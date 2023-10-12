@@ -3,6 +3,7 @@ import { Link, NavLink, useParams } from "react-router-dom";
 import axios from "axios";
 import "./Details.css";
 import "./Details.scss";
+import Header from "../../components/Header/Header";
 //↓↓↓↓↓↓↓↓↓↓↓↓↓Umar qigan↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 const Details = () => {
   const param = useParams();
@@ -38,7 +39,7 @@ const Details = () => {
         setSliceimg(myProducts.slice(-3, -1));
         setSliceimg2(myProducts.slice(-4, 4));
         // console.log(sliceimg);
-        console.log(setSliceimg2);
+        // console.log(setSliceimg2);
       } catch (error) {
         console.log(error);
       }
@@ -72,7 +73,7 @@ const Details = () => {
 
   //↓↓↓↓↓↓↓↓↓↓↓
   const initialState = {
-    firstCounter: 0,
+    firstCounter: 1,
   };
 
   const reducer = (state = initialState, action) => {
@@ -93,12 +94,11 @@ const Details = () => {
 
   const [count, dispatch] = useReducer(reducer, initialState);
 
-  const [cartItem, setCartItem] = useState([])
-  function addToCart(item){
-    setCartItem([...cartItem, item])
-  }
-  localStorage.setItem("cartItems", JSON.stringify(cartItem))
-  // ↑↑↑↑↑↑↑↑↑↑
+  // const [cartItem, setCartItem] = useState([])
+  // function addToCart(item){
+  //   setCartItem([...cartItem, item])
+  // }
+  // localStorage.setItem("cartItems", JSON.stringify(cartItem))
   return (
     <div>
       {/* Umar aka section */}
@@ -156,7 +156,9 @@ const Details = () => {
                     +
                   </button>
                 </div>
-                <button className="btn-item" onClick={() => addToCart(el)}>Add To Cart</button>
+                <button className="btn-item" onClick={() => addToCart(el)}>
+                  Add To Cart
+                </button>
               </div>
             </div>
           </div>
@@ -230,6 +232,7 @@ const Details = () => {
           </button>
         </div>
       </section>
+      {/* <Header counter={count.firstCounter} /> */}
     </div>
   );
 };
