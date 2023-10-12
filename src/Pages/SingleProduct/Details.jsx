@@ -99,7 +99,6 @@ const Details = () => {
   //   setCartItem([...cartItem, item])
   // }
   // localStorage.setItem("cartItems", JSON.stringify(cartItem))
-  // ↑↑↑↑↑↑↑↑↑↑
   return (
     <div>
       {/* Umar aka section */}

@@ -304,12 +304,20 @@
       "decribtion": "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts "
     },
     {
-      "id": 5,
-      "name": "Syltherine",
-      "img": "/public/image1.png",
-      "title": "Stylish cafe chair",
-      "price": 2500000,
-      "priceTwo": 350000,
+      "id": 4,
+      "name": "Respira",
+      "img": "/public/image9.png",
+      "title": "Outdoor bar table and stool",
+      "price": 5000000,
+      "category": "-50%",
+      "decribtion": "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a"
+    },
+    {
+      "id": 25,
+      "name": "Respira",
+      "img": "../../public/image6.png",
+      "title": "Outdoor bar table and stool",
+      "price": 5000000,
       "category": "New",
       "decribtion": "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts "
     }

@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Footer/Footer";
 import Cart from "./Pages/Cart/Cart";
 import Contact from "./Pages/contact/Contact";
+import Checkout from "./Pages/Checkout/Checkout";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           <Route path="/Contact" element={<Contact />}></Route>
           <Route path="/Cart" element={<Cart />}></Route>
           <Route path="/Details/:id" element={<Details />}></Route>
-          <Route path="/checkout" element></Route>
+          <Route path="/checkout" element={<Checkout/>}></Route>
           <Route path="/cart" element={<Cart />}></Route>
           {/* uchinchi project ↓ */}
           {/* <Route path="/______" element={<_______ />}></Route> */}
