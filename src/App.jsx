@@ -30,7 +30,7 @@ function App() {
           <Route path="/Cart" element={<Cart />}></Route>
           <Route path="/Details/:id" element={<Details />}></Route>
           <Route path="/checkout" element></Route>
-          <Route path="/cart" element={<Cart/>}></Route>
+          {/* <Route path="/cart" element={<Cart/>}></Route> */}
           {/* uchinchi project ↓ */}
           {/* <Route path="/______" element={<_______ />}></Route> */}
         </Routes>

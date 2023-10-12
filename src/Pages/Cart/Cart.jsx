@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import "./cart.scss";
 import { useState } from "react";
 const Cart = () => {
-//  MAPPING/////////////////////////////
-  const [getCartItem] = useState(JSON.parse(localStorage.getItem('cartItems')))
+  //  MAPPING/////////////////////////////
+  const [getCartItem] = useState(JSON.parse(localStorage.getItem("cartItems")));
   return (
     <section className="cart-section">
       <div className="cart-header">
@@ -31,18 +31,14 @@ const Cart = () => {
                   <td>Subtotal</td>
                 </th>
               </thead>
-              <tbody>
-                {
-                  getCartItem
-                }
-              </tbody>
+              <tbody>{getCartItem}</tbody>
             </table>
           </div>
           <div className="cart-right">
             <h2>Cart Totals</h2>
-            {
+            {/* {
               // map cart
-            }
+            } */}
             <button className="checkout">Check Out</button>
           </div>
         </div>
