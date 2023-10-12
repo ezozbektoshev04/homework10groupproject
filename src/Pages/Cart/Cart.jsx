@@ -1,9 +1,25 @@
 import { Link } from "react-router-dom";
 import "./cart.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 const Cart = () => {
   //  MAPPING/////////////////////////////
-  const [getCartItem] = useState(JSON.parse(localStorage.getItem("cartItems")));
+  // const [getCartItem] = useState(JSON.parse(localStorage.getItem("cartItems")));
+  const [orders, setProduct] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/orders");
+        console.log(orders);
+        setProduct([response.data]);
+        // console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <section className="cart-section">
       <div className="cart-header">
@@ -21,24 +37,20 @@ const Cart = () => {
       </div>
       <div className="container">
         <div className="cart-flex">
-          <div className="cart-left">
-            <table>
-              <thead>
-                <th>
-                  <td>Product</td>
-                  <td>Price</td>
-                  <td>Quantity</td>
-                  <td>Subtotal</td>
-                </th>
-              </thead>
-              <tbody>{getCartItem}</tbody>
-            </table>
-          </div>
+          <div className="cart-left"></div>
           <div className="cart-right">
             <h2>Cart Totals</h2>
-            {/* {
-              // map cart
-            } */}
+            <div className="">
+              {orders.map((el) => {
+                return (
+                  <div className="details-card" key={el.id}>
+                    <div className="right">
+                      <h1>{el.name}</h1>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
             <button className="checkout">Check Out</button>
           </div>
         </div>

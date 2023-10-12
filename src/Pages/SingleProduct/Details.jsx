@@ -203,7 +203,7 @@ const Details = () => {
       <section className="elbotir-section2">
         <div className="container">
           <div className="cards-content">
-            <div className=" cards">
+            <div className="cards">
               {posts.map((news, index) => (
                 <div key={index} className="cards-item">
                   <div className="bg-img">
